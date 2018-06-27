@@ -57,6 +57,9 @@ extern colorIndexMap g_colorMap;//根据分数值确定颜色值
 
 typedef std::map<int, WCHAR*> indexStringMap;
 extern indexStringMap g_indexStringMap;//将分值转换为字符串
+
+#define WM_GAME_OVER (WM_USER + 1)
+#define WM_MOVE_BLOCKS (WM_USER + 2)
 #ifdef _UNICODE
 #if defined _M_IX86
 #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")

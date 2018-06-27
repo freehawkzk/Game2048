@@ -53,4 +53,13 @@ public:
 	afx_msg void OnBnClickedButton3();
 	afx_msg void OnBnClickedButton4();
 	afx_msg void OnBnClickedButton1();
+	int m_nCurrentLevel;
+	int m_nCurrentScore;
+	bool CheckGameOver();
+	int m_nFreePos;
+
+	afx_msg LRESULT OnGameOver(WPARAM, LPARAM);
+	afx_msg LRESULT OnMoveBlocks(WPARAM, LPARAM);
+	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };

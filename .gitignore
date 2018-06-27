@@ -1,0 +1,9 @@
+
+*.tlog
+*.idb
+*.pdb
+*.obj
+x64/Debug/Game2048.Build.CppClean.log
+x64/Debug/Game2048.log
+x64/Debug/Game2048.pch
+x64/Debug/Game2048.res

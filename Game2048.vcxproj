@@ -185,7 +185,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Block.h" />
     <ClInclude Include="Game2048.h" />
     <ClInclude Include="Game2048Dlg.h" />
     <ClInclude Include="Resource.h" />
@@ -193,7 +192,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Game2048.cpp" />
     <ClCompile Include="Game2048Dlg.cpp" />
     <ClCompile Include="stdafx.cpp">

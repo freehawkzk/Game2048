@@ -177,12 +177,38 @@ void CGame2048Dlg::DrawBlocks()
 }
 ```
 ### 3.5 游戏分数计算
-&emsp;&emsp;目前，未开展。
+&emsp;&emsp;得分计算方式为当前合并之后的块分值的2倍，比如，某一次操作将4和4合并，合并后的块为8，那么本次操作的得分为8*2= 16分。
 ### 3.6 游戏结束的判断
-&emsp;&emsp;目前，我还没有进行游戏结束的判断，下次有时间再进行判断了。
-### 3.7 分数排行榜
-&emsp;&emsp;目前，未开展
+&emsp;&emsp;游戏结束主要由两种情况：(1) 某一个块的得分到达2048；(2) 游戏区全部被填满，无法再添加新块。
+```C++
+m_nFreePos = 0;
+	for each (auto var in g_vvData)
+	{
+		for each (auto x in var)
+		{
+			if (x == 0)
+			{
+				m_nFreePos++;
+			}
+			if (x == 2048)
+			{
+				SendMessage(WM_GAME_OVER, 1, 0);
+				return true;
+			}
+		}
+
+	}
+	if (m_nFreePos == 0)
+	{
+		SendMessage(WM_GAME_OVER, 0, 0);
+		return true;
+	}
+
+
+	return false;
+```
 ## 4、总结
 &emsp;&emsp;只要理清楚游戏规则，这个游戏是比较容易实现的，整个编码过程大概耗时1小时。[代码](https://github.com/freehawkzk/Game2048.git)
+&emsp;&emsp;在开发完试完的时候，发现鼠标果然没有键盘来得快啊，使用键盘操作轻松就完成了2048分结束游戏的条件，使用鼠标真是没这么方便。
 ## 5、效果图
-![image](https://img-blog.csdn.net/20180627152713218?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZyZWVoYXdrems=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![image](https://img-blog.csdn.net/20180627223550118?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZyZWVoYXdrems=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
